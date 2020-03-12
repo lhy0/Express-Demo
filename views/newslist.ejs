@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>新闻列表</title>
+  </head>
+  <body>
+    <a href="/add.html">新增</a>
+    <table border="1" cellpadding=0 cellspacing=0>
+      <tr>
+        <td>标题</td>
+        <td>来源</td>
+        <td>作者</td>
+        <td>时间</td>
+        <td>操作</td>
+      </tr>
+      <% list.forEach(function(news){ %>
+        <tr>
+          <td><%= news.title %></td>
+          <td><%= news.from %></td>
+          <td><%= news.author %></td>
+          <td><%= news.time %></td>
+          <td>
+            <a href="/modify.html?id=<%= news._id %>">修改</a>&nbsp;&nbsp;
+            <a href="/del.html?id=<%= news._id %>">删除</a>
+          </td>
+        </tr>
+      <% }); %>
+    </table>
+  </body>
+</html>

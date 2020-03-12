@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>修改页面</title>
+</head>
+<body>
+    <form action="/save_edit.html?id=<%= news._id %>" method="post">
+        <table>
+            <tr>
+                <td>标题</td>
+                <td>
+                    <input type="text" name="title" id="title" value="<%= news.title %>"/>
+                </td>
+            </tr>
+            <tr>
+                <td>作者</td>
+                <td>
+                    <input type="text" name="author" id="author" value="<%= news.author %>"/>
+                </td>
+            </tr>
+            <tr>
+                <td>来源</td>
+                <td>
+                    <input type="text" name="from" id="from" value="<%= news.from %>"/>
+                </td>
+            </tr>
+            <tr>
+                <td>内容</td>
+                <td>
+                    <textarea name="content" id="content">
+                        <%= news.content %>
+                    </textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>
+                    <button type="submit">发布</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
